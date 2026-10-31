@@ -1,39 +1,27 @@
 # AutoPyToExe-CBM
 CBM PyToExe Converter v1.0.0: A lightweight PyQt5 GUI tool to convert Python scripts(.py) to Windows executables (.exe).  Features: Onefile/Onedir modes, custom icon, editable PyInstaller command, and live logs.  Download CBM.exe from Assets.  Note: PyInstaller exes may trigger false-positive antivirus warnings; source code is available for review.
 
-🚀 CBM PyToExe Converter
+# 🚀 CBM PyToExe Converter:
 https://img.shields.io/github/v/release/YourUsername/YourRepoName
 https://img.shields.io/badge/python-3.8%2B-blue
 https://img.shields.io/badge/GUI-PyQt5-green
 
 A lightweight, user-friendly GUI tool to convert Python scripts (.py) into standalone Windows executables (.exe) using PyInstaller.
 
-یک ابزار گرافیکی سبک و کاربرپسند برای تبدیل اسکریپت‌های پایتون (.py) به فایل‌های اجرایی مستقل ویندوز (.exe) با استفاده از PyInstaller.
-
-✨ Features | ویژگی‌ها
+✨ Features:
 🖥️ Modern Dark-Mode GUI – Built with PyQt5
-
 📁 One File / One Directory – Choose your output mode (--onefile / --onedir)
-
 🖼️ Custom Icon – Select a custom .ico file for your executable
-
 ✏️ Editable Final Command – Advanced users can modify the PyInstaller command before running
-
 📊 Live Progress & Logs – Real-time output log and progress bar
-
 📂 Open Output Folder – One-click access to the dist folder
-
 ⚡ Auto Environment Detection – Automatically uses your Conda environment
 
-⚙️ Prerequisites | پیش‌نیازها
+⚙️ Prerequisites:
 Before using CBM.exe, you must ensure the following:
-
 Anaconda (or Miniconda) is installed on your system.
-
 You have an active Conda environment (e.g., Pytomation) with Python installed.
-
 PyInstaller is installed in that environment.
-
 All libraries required by your target script (e.g., OpenCV, Flask, Dash, PyQt5) are installed in that same environment.
 
 📦 Installing Required Packages
@@ -51,10 +39,9 @@ Download the latest CBM.exe from the Assets section.
 
 Run CBM.exe (No Python installation is required on the target machine).
 
-🖥️ How to Use | نحوه استفاده
+🖥️ How to Use:
 🟢 Step 1: Select Your Python Script
 Click Browse and select the .py file you want to convert.
-
 🟢 Step 2: Configure Settings
 Choose your desired options:
 
@@ -70,10 +57,10 @@ text
 "C:\Users\User\anaconda3\envs\Your_Environment_Name\python.exe" -m PyInstaller --noconfirm ...
 You MUST replace Your_Environment_Name with the actual name of your Conda environment.
 
-Example: If your environment is named Pytomation, the path should be:
+Example: If your environment is named CBM, the path should be:
 
 text
-"C:\Users\User\anaconda3\envs\Pytomation\python.exe" -m PyInstaller --noconfirm ...
+"C:\Users\User\anaconda3\envs\cbm\python.exe" -m PyInstaller --noconfirm ...
 How to find your environment name:
 
 Open Anaconda Prompt and run:
@@ -86,7 +73,7 @@ text
 # conda environments:
 #
 base                  *  C:\Users\User\anaconda3
-Pytomation               C:\Users\User\anaconda3\envs\Pytomation
+CBM               C:\Users\User\anaconda3\envs\Pytomation
 myproject                C:\Users\User\anaconda3\envs\myproject
 Use the name shown in the left column (e.g., Pytomation).
 
@@ -106,7 +93,7 @@ Avoid Qt conflicts	--exclude-module PySide6
 Example Full Command:
 
 text
-"C:\Users\User\anaconda3\envs\Pytomation\python.exe" -m PyInstaller --noconfirm --onefile --windowed --collect-all cv2 --exclude-module PySide6 "D:\MyProject\script.py"
+"C:\Users\User\anaconda3\envs\CBM\python.exe" -m PyInstaller --noconfirm --onefile --windowed --collect-all cv2 --exclude-module PySide6 "D:\MyProject\script.py"
 🟢 Step 5: Convert
 Click the CONVERT .PY TO .EXE button and wait for the process to finish.
 
@@ -126,7 +113,7 @@ Solution: Ensure you are using the correct Python path for your Conda environmen
 ❌ Antivirus False Positive
 Some antivirus software (like Windows Defender) may flag the generated .exe as a false positive. This is a known issue with PyInstaller. The source code is fully available for review.
 
-🛠️ For Developers | برای توسعه‌دهندگان
+🛠️ For Developers:
 To run the source code directly:
 
 bash
@@ -137,10 +124,10 @@ To build CBM.exe from source:
 
 bash
 pyinstaller --noconfirm --onefile --windowed --icon=CBM.ico main.py
-📄 License | مجوز
+📄 License
 This project is licensed under the MIT License.
 
-🤝 Contributing | مشارکت
+🤝 Contributing
 Contributions, issues, and feature requests are welcome!
 
 Fork the repository.
@@ -154,8 +141,8 @@ Push to the branch (git push origin feature/AmazingFeature).
 Open a Pull Request.
 
 📬 Contact | ارتباط
-GitHub: YourUsername
+GitHub: CBM INSPECTION
 
-Email: your.email@example.com
+Email: cbminspection@gmail.com
 
 Made with ❤️ by CBM Team
