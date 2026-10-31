@@ -31,9 +31,9 @@ class ConvertThread(QThread):
     def run(self):
         try:
             env = os.environ.copy()
-            conda_path = r"C:\Users\User\anaconda3\envs\Your_enviroment"
+            conda_path = r"C:\Users\User\anaconda3\envs\Your_environment"
             env["CONDA_PREFIX"] = conda_path
-            env["CONDA_DEFAULT_ENV"] = "Your_enviroment"
+            env["CONDA_DEFAULT_ENV"] = "Your_environment"
             env["PATH"] = f"{conda_path};{conda_path}\\Library\\mingw-w64\\bin;{conda_path}\\Library\\usr\\bin;{conda_path}\\Library\\bin;{conda_path}\\Scripts;" + env.get("PATH", "")
 
             process = subprocess.Popen(
@@ -231,7 +231,7 @@ class PyToExeConverter(QMainWindow):
 
     def update_command(self):
         # دستور پایه با استفاده از پایتون محیط مجازی
-        cmd = r'"C:\Users\User\anaconda3\envs\Your_enviroment\python.exe" -m PyInstaller --noconfirm'
+        cmd = r'"C:\Users\User\anaconda3\envs\Your_environment\python.exe" -m PyInstaller --noconfirm'
         
         if self.radio_onefile.isChecked():
             cmd += " --onefile"
