@@ -18,7 +18,7 @@ from PyQt5.QtCore import Qt, QThread, pyqtSignal, QTimer
 from PyQt5.QtGui import QFont, QIcon, QPixmap, QPainter, QColor
 
 
-# --- کلاس Thread برای اجرای PyInstaller بدون فریز شدن UI ---
+# --- Thread class for running PyInstaller without freezing the UI ---
 class ConvertThread(QThread):
     output_signal = pyqtSignal(str)
     finished_signal = pyqtSignal(bool)
@@ -169,14 +169,14 @@ class PyToExeConverter(QMainWindow):
         icon_layout.addWidget(icon_btn)
         layout.addLayout(icon_layout)
 
-        # 5. Editable Command Display (قابل ویرایش)
+        # 5. Editable Command Display (Editable)
         layout.addWidget(QLabel("Final Command (Editable):"))
         self.command_display = QLineEdit()
         self.command_display.setStyleSheet("background-color: #1e1e1e; color: #ffcc00; font-family: Consolas; font-size: 13px; padding: 5px;")
-        # اینجا دیگر ReadOnly نیست تا کاربر بتواند تغییر دهد
+        # This is no longer ReadOnly, so the user can make changes.
         layout.addWidget(self.command_display)
 
-        # دکمه ریست دستور به حالت پیش‌فرض
+        # Reset command to default state button
         self.reset_cmd_btn = QPushButton("↺ Reset Command to Default")
         self.reset_cmd_btn.setStyleSheet("background-color: #555; font-size: 12px; padding: 5px;")
         self.reset_cmd_btn.clicked.connect(self.update_command)
@@ -230,7 +230,7 @@ class PyToExeConverter(QMainWindow):
             self.update_command()
 
     def update_command(self):
-        # دستور پایه با استفاده از پایتون محیط مجازی
+        # Basic commands using a Python virtual environment
         cmd = r'"C:\Users\User\anaconda3\envs\Your_environment\python.exe" -m PyInstaller --noconfirm'
         
         if self.radio_onefile.isChecked():
@@ -245,8 +245,8 @@ class PyToExeConverter(QMainWindow):
 
         if self.icon_checkbox.isChecked() and self.icon_path:
             cmd += f' --icon="{self.icon_path}"'
-            
-            # --- این خط را اضافه کنید ---
+
+        # -----------------------------
         cmd += " --exclude-module PySide6"
         # -----------------------------
 
@@ -255,7 +255,7 @@ class PyToExeConverter(QMainWindow):
         else:
             cmd += ' ""'
 
-        # فقط اگر کاربر روی Reset کلیک کرده یا تغییرات دستی نداشته باشد، به روزرسانی می‌شود
+        # It is updated only if the user has clicked 'Reset' or has not made any manual changes.
         self.command_display.setText(cmd)
 
     def start_conversion(self):
@@ -387,7 +387,7 @@ class SplashScreen(QSplashScreen):
         bar_y = height - 40
         text_y = bar_y - 15
         
-        # --- رسم متن بالای نوار ---
+        # --- Drawing text above the bar ---
         painter.setPen(QColor("#ffffff"))
         painter.setFont(QFont("Arial", 14, QFont.Bold))
         painter.drawText(0, 0, width, text_y, Qt.AlignHCenter | Qt.AlignBottom, "Auto Py to Exe")
@@ -396,7 +396,7 @@ class SplashScreen(QSplashScreen):
         painter.setFont(QFont("Arial", 10))
         painter.drawText(0, 0, width, text_y + 20, Qt.AlignHCenter | Qt.AlignTop, "Version 1.0")
         
-        # --- رسم نوار پیشرفت ---
+        # --- Drawing the progress bar ---
         bar_rect = pixmap.rect().adjusted(50, -40, -50, -25)
         bar_rect.setTop(height - 40)
         bar_rect.setBottom(height - 25)
@@ -414,7 +414,7 @@ class SplashScreen(QSplashScreen):
             painter.setPen(Qt.NoPen)
             painter.drawRoundedRect(progress_rect, 3, 3)
         
-        # --- رسم متن Loading در زیر نوار ---
+        # --- Draw "Loading" text below the bar ---
         painter.setPen(QColor("#ffcc00"))
         painter.setFont(QFont("Arial", 9, QFont.StyleItalic))
         painter.drawText(0, bar_rect.bottom() + 5, width, 20, Qt.AlignHCenter | Qt.AlignTop, "Loading...")
