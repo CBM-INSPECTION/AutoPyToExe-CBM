@@ -32,7 +32,7 @@ conda activate Your_Environment_Name
 pip install pyinstaller PyQt5
 ⚠️ Important: If your target Python script uses libraries like cv2, dash, or flask, install them in the same environment before using this tool.
 
-📥 Download & Run | دانلود و اجرا
+📥 Download & Run
 Go to the Releases page.
 
 Download the latest CBM.exe from the Assets section.
@@ -73,7 +73,7 @@ text
 # conda environments:
 #
 base                  *  C:\Users\User\anaconda3
-CBM               C:\Users\User\anaconda3\envs\Pytomation
+CBM               C:\Users\User\anaconda3\envs\cbm
 myproject                C:\Users\User\anaconda3\envs\myproject
 Use the name shown in the left column (e.g., Pytomation).
 
@@ -100,7 +100,7 @@ Click the CONVERT .PY TO .EXE button and wait for the process to finish.
 🟢 Step 6: Locate Your EXE
 Once the process completes successfully, click 📂 Open Output Folder (dist) to open the folder containing your generated .exe file.
 
-🔧 Troubleshooting | رفع خطاهای رایج
+🔧 Troubleshooting 
 ❌ Error: "No module named 'cv2'" or "DLL load failed"
 Solution: Add --collect-all cv2 to the editable command.
 
@@ -140,7 +140,7 @@ Push to the branch (git push origin feature/AmazingFeature).
 
 Open a Pull Request.
 
-📬 Contact | ارتباط
+📬 Contact
 GitHub: CBM INSPECTION
 
 Email: cbminspection@gmail.com
